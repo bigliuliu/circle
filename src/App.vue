@@ -1,23 +1,45 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
-  </div>
+    <div id="app" class="app">
+        <toolbar></toolbar>
+        <notes-list></notes-list>
+        <editor></editor>
+        <!-- <router-view></router-view> -->
+    </div>
 </template>
-
 <script>
 export default {
-  name: 'app'
+    name: 'app'
 }
 </script>
-
 <style>
+html,
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    max-height: 100%;
+    position: relative;
 }
 </style>
+<script type="text/javascript" charset="utf-8" async defer>
+import Toolbar from '@/components/Toolbar'
+import NotesList from '@/components/NotesList'
+import Editor from './components/Editor'
+import store from '@/store'
+export default {
+    created() {
+        this.$store.initStore()
+    }
+    components: {
+            Toolbar,
+            NotesList,
+            Editor
+        },
+        store
+}
+</script>
