@@ -6,11 +6,25 @@
         <!-- <router-view></router-view> -->
     </div>
 </template>
-<script>
-export default {
-    name: 'app'
-}
+
+<script type="text/javascript" charset="utf-8" async defer>
+    import Toolbar from '@/components/Toolbar'
+    import NotesList from '@/components/NotesList'
+    import Editor from './components/Editor'
+    import store from '@/store'
+    export default {
+        created() {
+            this.$store.initStore()
+        },
+        components: {
+            Toolbar,
+            NotesList,
+            Editor
+        },
+        store
+    }
 </script>
+
 <style>
 html,
 #app {
@@ -26,20 +40,4 @@ body {
     position: relative;
 }
 </style>
-<script type="text/javascript" charset="utf-8" async defer>
-import Toolbar from '@/components/Toolbar'
-import NotesList from '@/components/NotesList'
-import Editor from './components/Editor'
-import store from '@/store'
-export default {
-    created() {
-        this.$store.initStore()
-    }
-    components: {
-            Toolbar,
-            NotesList,
-            Editor
-        },
-        store
-}
-</script>
+
