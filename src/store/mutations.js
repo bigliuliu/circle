@@ -1,49 +1,30 @@
 export default {
-  INIT_STORE: (state, data) => {
-    'use strict'
-    state.notes = data.notes
-    state.show = data.show
-    state.activeNote = data.activeNote
-  },
-  NEW_NOTE: (state) => {
-    'use strict'
-    const newNote = {
-      id: +new Date(),
-      title: '',
-      content: '',
-      favorite: false
-    }
-    state.notes.push(newNote)
-    state.activeNote = newNote
-  },
-  EDIT_NOTE: (state, note) => {
-    'use strict'
-    state.activeNote = note
-    for (let i = 0; i < state.notes.length; i++) {
-      if (state.notes[i].id === note.id) {
-        state.notes[i] = note
-        break
-      }
+  GET_DATA: (state, payload) => {
+    if (payload.res.httpStatusCode === 200) {
+      state.itemDetail = payload.res.topiclist
     }
   },
-  DELETE_NOTE: (state) => {
-    state.notes.splice(state.activeNote, 1)
-    state.activeNote = state.notes[0] || {}
+
+  GET_USER_INFORM: (state, payload) => {
+    state.user_id = payload.res.users_id
   },
-  TOGGLE_FAVORITE: (state) => {
-    'use strict'
-    state.activeNote.favorite = !state.activeNote.favorite
+
+  ADD_ITEMNUM: (state, payload) => {
+    state.itemNum += payload.num
   },
-  SET_SHOW_ALL: (state, show) => {
-    'use strict'
-    state.show = show
-    if (show === 'favorite') {
-      state.activeNote = state.notes.filter(note => note.favorite)[0] || {}
-    } else {
-      state.activeNote = state.notes[0] || {}
-    }
+
+  REMBER_ANSWER: (state, payload) => {
+    state.answerid[state.itemNum] = payload.id
   },
-  SET_ACTIVE_NOTE: (state, note) => {
-    state.activeNote = note
+
+  REMBER_TIME: (state) => {
+    state.timer = setInterval(() => {
+      state.allTime++
+    }, 1000)
+  },
+
+  INITIALIZE_DATA: (state) => {
+    state.itemNum = 1
+    state.allTime = 0
   }
 }

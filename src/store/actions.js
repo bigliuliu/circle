@@ -1,36 +1,25 @@
-const initNote = {
-  id: +new Date(),
-  title: '我的笔记',
-  content: '第一篇笔记内容',
-  favorite: false
-}
-
-const initData = {
-  show: 'all',
-  notes: [initNote],
-  activeNote: initNote
-}
+import ajax from '../assets/js/ajax'
 
 export default {
-  initStore ({commit}) {
-    commit('INIT_STORE', initData)
+  addNum ({ commit, state }, id) {
+    commit('REMBER_ANSWER', { id })
+    if (state.itemNum < state.itemDetail.length) {
+      commit('ADD_ITEMNUM', {
+        num: 1
+      })
+    }
   },
-  updateActiveNote ({commit}, note) {
-    commit('SET_ACTIVE_NOTE', note)
+
+  getData ({ commit, state }) {
+    ajax('GET', 'http://operating-activities.putao.com/happyfriday?active_topic_id=4')
+      .then(res => {
+        commit('GET_DATA', {
+          res
+        })
+      })
   },
-  newNote ({commit}, note) {
-    commit('NEW_NOTE', note)
-  },
-  deleteNote ({commit}) {
-    commit('DELETE_NOTE')
-  },
-  toggleFavorite ({commit}) {
-    commit('TOGGLE_FAVORITE')
-  },
-  editNote ({commit}, note) {
-    commit('EDIT_NOTE', note)
-  },
-  updateShow ({commit}, show) {
-    commit('SET_SHOW_ALL', show)
+
+  initializeData ({ commit }) {
+    commit('INITIALIZE_DATA')
   }
 }
