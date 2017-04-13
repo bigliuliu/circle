@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from '@/App'
+import {routerMode} from '../config/env'
 
 Vue.use(Router)
 
@@ -14,13 +15,15 @@ export default new Router({
     component: App,
     children: [{
       path: '',
-      component: Home
+      redirect: '/home'
     }, {
-      path: '/item',
-      component: Item
+      path: '/home',
+      component: Home
     }, {
       path: '/score',
       component: Score
     }]
-  }]
+  }],
+  mode: routerMode,
+  strict: process.env.NODE_ENV !== 'production'
 })
