@@ -24,6 +24,5 @@ export default new Router({
       component: Score
     }]
   }],
-  mode: routerMode,
-  strict: process.env.NODE_ENV !== 'production'
+  mode: routerMode
 })
