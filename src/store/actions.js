@@ -1,25 +1,17 @@
-import ajax from '../assets/js/ajax'
+import {getUser, getAddressList} from '../service/getData'
+import {
+  GET_USERINFO,
+  SAVE_ADDRESS
+} from './mutation-types.js'
 
 export default {
-  addNum ({ commit, state }, id) {
-    commit('REMBER_ANSWER', { id })
-    if (state.itemNum < state.itemDetail.length) {
-      commit('ADD_ITEMNUM', {
-        num: 1
-      })
-    }
+  async getUserInfo ({ commit }) {
+    let res = await getUser()
+    commit(GET_USERINFO, res)
   },
-
-  getData ({ commit, state }) {
-    ajax('GET', 'http://operating-activities.putao.com/happyfriday?active_topic_id=4')
-      .then(res => {
-        commit('GET_DATA', {
-          res
-        })
-      })
-  },
-
-  initializeData ({ commit }) {
-    commit('INITIALIZE_DATA')
+  async saveAddress ({ commit, state }) {
+    if (state.removeAddress.length > 0) return
+    let addres = await getAddressList(state.userInfo.user_id)
+    commit(SAVE_ADDRESS, addres)
   }
 }

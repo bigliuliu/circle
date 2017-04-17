@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from '@/App'
+import App from '../App'
 import {routerMode} from '../config/env'
 
 Vue.use(Router)
 
-const Home = r => require.ensure([], () => r(require('@/components/page/Home.vue')), 'home')
-const Item = r => require.ensure([], () => r(require('@/components/page/Item.vue')), 'item')
-const Score = r => require.ensure([], () => r(require('@/components/page/Score.vue')), 'score')
+const Home = r => require.ensure([], () => r(require('../components/page/Home.vue')), 'home')
 
 export default new Router({
   routes: [{
@@ -19,9 +17,6 @@ export default new Router({
     }, {
       path: '/home',
       component: Home
-    }, {
-      path: '/score',
-      component: Score
     }]
   }],
   mode: routerMode
