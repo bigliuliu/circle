@@ -40,9 +40,9 @@
     }
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   @import '../../assets/css/mixin';
-  #head_top {
+  #head_top{
     background-color: $blue;
     position: fixed;
     z-index: 100;
@@ -50,8 +50,7 @@
     top: 0;
     @include wh(100%, 1.95rem);
   }
-
-  .head_goback {
+  .head_goback{
     left: 0.4rem;
     @include wh(0.6rem, 0.8rem);
     line-height: 2.2rem;
@@ -69,12 +68,12 @@
       @include wh(.8rem, .8rem);
     }
   }
-  .title_head {
+  .title_head{
     @include center;
     width: 50%;
     color: #fff;
     text-align: center;
-    .title_text {
+    .title_text{
       @include sc(0.8rem, #fff);
       text-align: center;
       font-weight: bold;

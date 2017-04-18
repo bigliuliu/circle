@@ -29,8 +29,7 @@
         <li v-for="(value, key, index) in sortgroupcity" :key="key" class="letter_classify_li">
           <h4 class="city_title">{{key}}
                         <span v-if="index === 0">（按字母排序）</span>
-          </h4>
-          <ul class="groupcity_name_container citylistul clear">
+          </h4>          <ul class="groupcity_name_container citylistul clear">
             <router-link tag="li" v-for="item in value" :to="'/city/' + item.id" :key="item.id" class="ellipsis">
               {{item.name}}
 
