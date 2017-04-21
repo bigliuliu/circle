@@ -8,12 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   latitude: '',   // 纬度
-  longitude: '',  // 经度
-  content: {}, // 朋友圈状态
-  userInfo: {
-    username: null,
-    circleList: []
-  }
+  longitude: ''  // 经度
 }
 
 const store = new Vuex.Store({

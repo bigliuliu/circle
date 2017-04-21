@@ -1,10 +1,9 @@
 /**
  * Created by ubuntu on 4/14/17.
  */
-import {baseUrl} from './env'
+
 export default async (type = 'GET', url = '', data = {}, method = 'fetch') => {
   type = type.toUpperCase()
-  url = baseUrl + url
   if (type === 'GET') {
     let dataStr = ''
     Object.keys(data).forEach(key => {

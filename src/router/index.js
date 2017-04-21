@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from '../App'
-import {routerMode} from '../config/env'
 
 Vue.use(Router)
 
@@ -26,5 +25,5 @@ export default new Router({
       component: Msite
     }]
   }],
-  mode: routerMode
+  mode: 'hash'
 })

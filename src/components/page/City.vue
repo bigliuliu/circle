@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-  import HeaderTop from '../common/Head.vue'
+  import HeaderTop from '../common/MyHeader.vue'
   import { currentcity, searchplace } from '../../service/getData'
   import { getStore, setStore } from '../../config/mUtils'
   export default {
