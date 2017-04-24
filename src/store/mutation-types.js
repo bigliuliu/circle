@@ -1,7 +1,7 @@
 /**
  * Created by ubuntu on 4/14/17.
  */
-export const RECORD_ADDRESS = 'RECORD_ADDRESS'
+export const CHECK_USER = 'CHECK_USER'   // 检查
 export const ADD_CART = 'ADD_CART'
 export const REDUCE_CART = 'REDUCE_CART'
 export const INIT_BUYCART = 'INIT_BUYCART'
