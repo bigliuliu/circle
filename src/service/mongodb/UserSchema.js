@@ -7,8 +7,8 @@ let userSchema = new Schema({
   name: String,
   password: String,
   regist: Number,
-  DOB: Date,
-  isAlive: Boolean
+  regDate: Date,
+  circle: ['朋友圈']
 })
 
 let User = mongoose.model('User', userSchema)

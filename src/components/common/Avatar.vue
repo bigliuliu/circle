@@ -10,29 +10,32 @@
   </el-upload>
 </template>
 
-<style>
+<style lang="scss"  >
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    width: 80%;
+    height: 10vw;
+    display:flex;
+    justify-content:center;
+    align-items: center;
   }
   .avatar-uploader .el-upload:hover {
     border-color: #20a0ff;
   }
   .avatar-uploader-icon {
-    font-size: 28px;
     color: #8c939d;
-    width: 178px;
-    height: 178px;
-    line-height: 178px;
-    text-align: center;
+    width: 100%;
+    height: 100%;
   }
   .avatar {
-    width: 178px;
-    height: 178px;
+    width: 100%;
+    height: 0px;
     display: block;
+    padding-bottom: 100%;
   }
 </style>
 
