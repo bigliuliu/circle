@@ -1,6 +1,6 @@
 <template>
   <div>
-    <my-header></my-header>
+    <my-header class="fix_top"></my-header>
     <el-row :gutter="10" justify="center" type="flex">
       <el-col :xs="6" :sm="5" :md="4" :lg="3">
         <div class="grid-content bg-purple">
@@ -9,7 +9,9 @@
         </div>
       </el-col>
       <el-col :xs="16" :sm="14" :md="12" :lg="10">
-        <div class="grid-content bg-purple"></div>
+        <div class="grid-content bg-purple">
+          <router-view></router-view>
+        </div>
       </el-col>
     </el-row>
   </div>
@@ -31,6 +33,7 @@
 
   .el-row {
     margin-bottom: 0px;
+    top: 45px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -52,5 +55,11 @@
 
   .left_nav {
     margin: 10px 15px 3px 3px;
+  }
+  .fix_top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1999;
   }
 </style>

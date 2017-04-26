@@ -1,13 +1,12 @@
 $blue: #3190e8;
 $bc: #e4e4e4;
-$fc:#fff;
+$fc: #fff;
 
 //背景
-@mixin bis($url){
+@mixin bis($url) {
   background: url($url) no-repeat;
   background-size: 100% 100%;
 }
-
 
 @mixin borderRadius($radius) {
   -webkit-border-radius: $radius;
@@ -16,16 +15,16 @@ $fc:#fff;
 }
 
 //定位全屏
-@mixin allcover{
-  position:absolute;
-  top:0;
-  right:0;
+@mixin allcover {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @mixin center {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -37,27 +36,26 @@ $fc:#fff;
 
 @mixin cl {
   position: absolute;
-  left:50%;
+  left: 50%;
   transform: translateX(-50%);
 }
 
-@mixin wh($width, $height){
+@mixin wh($width, $height) {
   width: $width;
   height: $height;
 }
 
-@mixin font($size, $line-height){
+@mixin font($size, $line-height) {
   font: #{$size}/#{$line-height};
 }
 
-@mixin sc($size, $color){
+@mixin sc($size, $color) {
   font-size: $size;
   color: $color;
 }
 
-
 //flex布局
-@mixin fj($type: space-between){
+@mixin fj($type: space-between) {
   display: flex;
   justify-content: $type;
 }

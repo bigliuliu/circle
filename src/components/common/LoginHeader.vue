@@ -13,19 +13,19 @@
 </template>
 
 <script>
-    export default {
-      data () {
-        return {
-          user: {
-            username: '',
-            password: ''
-          }
-        }
-      },
-      methods: {
-        onSubmit () {
-          console.log('submit!')
+  export default {
+    data () {
+      return {
+        user: {
+          username: '',
+          password: ''
         }
       }
+    },
+    methods: {
+      onSubmit () {
+        console.log('submit!')
+      }
     }
+  }
 </script>

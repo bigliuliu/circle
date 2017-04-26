@@ -14,8 +14,8 @@
       </div>
     </el-col>
     <el-col :xs="3" :sm="3" :md="3" :lg="2">
-      <div class="grid-content bg-purple">
-        <log-out class="logout"></log-out>
+      <div class="grid-content bg-purple logout">
+        <log-out></log-out>
       </div>
     </el-col>
   </el-row>
@@ -59,23 +59,26 @@
 
   .head_logo {
     font-size: 24px;
-    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     height: 100%;
     line-height: 100%;
     display: inline-block;
     /*margin: 0px auto;*/
   }
+
   .grid-content {
     border-radius: 2px;
     height: 40px;
-    text-align:center;
+    text-align: center;
   }
-  .login_header, .logout{
-    height: 30px;
+
+  .login_header, .logout {
+    height: 36px;
     display: inline-block;
     margin: 2px auto;
     float: right;
     font-size: 15px;
   }
+
 </style>
 

@@ -1,5 +1,3 @@
-import {
-} from './mutation-types.js'
+import {} from './mutation-types.js'
 
-export default {
-}
+export default {}
