@@ -3,17 +3,17 @@
  */
 let mongoose = require('mongoose')
 let Schema = mongoose.Schema
-let userSchema = new Schema({
-  name: String,
-  password: String,
-  regist: Number,
-  regDate: Date,
-  circle: ['朋友圈']
+let stateSchema = new Schema({
+  user_id: Number,
+  clrcle_id: Number,
+  content: String,
+  release: Date,
+  img_url: [String]
 })
 
-let User = mongoose.model('User', userSchema)
+let State = mongoose.model('State', stateSchema)
 
-let arvind = new User({
+let arvind = new State({
   name: 'Arvind',
   age: 99,
   DOB: '01/01/1915',
