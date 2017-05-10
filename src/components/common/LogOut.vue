@@ -3,7 +3,7 @@
     <el-button type="primary">更多菜单<i class="el-icon-caret-bottom el-icon--right"></i>
     </el-button>
     <el-dropdown-menu slot="dropdown"  class="small">
-      <div v-if="user">
+      <div v-if="user.id">
         <el-dropdown-item command="/logout">登出</el-dropdown-item>
       </div>
       <div v-else>

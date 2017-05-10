@@ -1,3 +1,7 @@
-import {} from './mutation-types.js'
+import {ADD_USER} from './mutation-types.js'
 
-export default {}
+export default {
+  [ADD_USER] (state, user) {
+    state.user = user
+  }
+}
