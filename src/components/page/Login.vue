@@ -54,11 +54,11 @@
       }
     },
     methods: {
-      ...mapActions(['check_user']),
+      ...mapActions(['check_login']),
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.check_user(this.ruleForm2.pass, this.ruleForm2.checkPass)
+            this.check_login({userName: this.ruleForm2.pass, password: this.ruleForm2.checkPass})
           } else {
             console.log('!!')
             return false

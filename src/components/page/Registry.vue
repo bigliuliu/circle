@@ -7,12 +7,15 @@
         <el-form-item label="用戶名" prop="name">
           <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
-        <el-form-item label="密碼" prop="region">
+        <el-form-item label="密碼" prop="password">
           <el-input type="password" v-model="ruleForm.password"></el-input>
+        </el-form-item>
+        <el-form-item label="密碼確認" prop="repassword">
+          <el-input type="password" v-model="ruleForm.repassword"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')">注冊</el-button>
-          <el-button @click="resetForm('ruleForm')">登陸</el-button>
+          <el-button @click="login">登陸</el-button>
         </el-form-item>
       </el-form>
     </el-col>
@@ -21,33 +24,41 @@
 <script>
   export default {
     data () {
+      var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'))
+        } else {
+          if (this.ruleForm2.checkPass !== '') {
+            this.$refs.ruleForm2.validateField('checkPass')
+          }
+          callback()
+        }
+      }
+      var validatePass2 = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请再次输入密码'))
+        } else if (value !== this.ruleForm2.pass) {
+          callback(new Error('两次输入密码不一致!'))
+        } else {
+          callback()
+        }
+      }
       return {
         ruleForm: {
           name: '',
-          password: ''
+          password: '',
+          repassword: ''
         },
         rules: {
           name: [
-            {required: true, message: '请输入活动名称', trigger: 'blur'},
-            {min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur'}
+            {required: true, message: '用戶名', trigger: 'blur'},
+            {min: 1, max: 10, message: '', trigger: 'blur'}
           ],
-          region: [
-            {required: true, message: '请选择活动区域', trigger: 'change'}
+          pass: [
+            { validator: validatePass, trigger: 'blur' }
           ],
-          date1: [
-            {type: 'date', required: true, message: '请选择日期', trigger: 'change'}
-          ],
-          date2: [
-            {type: 'date', required: true, message: '请选择时间', trigger: 'change'}
-          ],
-          type: [
-            {type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change'}
-          ],
-          resource: [
-            {required: true, message: '请选择活动资源', trigger: 'change'}
-          ],
-          desc: [
-            {required: true, message: '请填写活动形式', trigger: 'blur'}
+          checkPass: [
+            { validator: validatePass2, trigger: 'blur' }
           ]
         }
       }
@@ -63,8 +74,8 @@
           }
         })
       },
-      resetForm (formName) {
-        this.$refs[formName].resetFields()
+      login () {
+        this.$router.push('/login')
       }
     }
   }

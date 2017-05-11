@@ -4,10 +4,11 @@
 let mysql = require('mysql')
 let pool = mysql.createPool({
   connectionLimit: 10,
-  host: 'localhost:3306',
-  user: 'boot',
-  password: 'boot',
-  database: 'circle',
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: '123456',
+  database: 'boot',
   'supportBigNumbers': true,
   'bigNumberStrings': true
 })
@@ -17,6 +18,7 @@ exports.release = function (connection) {
     console.log('Connection closed:' + error.message())
   })
 }
+
 exports.execQuery = function (options) {
   pool.getConnection(function (error, connection) {
     if (error) {
