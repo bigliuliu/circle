@@ -8,8 +8,12 @@ Vue.use(Vuex)
 
 const state = {
   user: {
-    id: null,
-    username: ''
+    user_id: null,
+    nickname: '',
+    avatar: '',
+    user_level: '',
+    user_score: 0,
+    register_date: null
   },
   location: ''
 }

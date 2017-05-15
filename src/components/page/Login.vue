@@ -58,7 +58,9 @@
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.check_login({userName: this.ruleForm2.pass, password: this.ruleForm2.checkPass})
+            this.check_login({username: this.ruleForm2.pass, password: this.ruleForm2.checkPass}, function (body) {
+              if (body) this.$router.push('/user_home')
+            })
           } else {
             console.log('!!')
             return false

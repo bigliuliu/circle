@@ -11,7 +11,7 @@
 
 var mysql = require('../../service/mysql/userService')
 function a () {
-  mysql.user_registry('bbb', 'aaa', function (result) {
+  mysql.check_login('a', 'aaa', function (result) {
     console.log(result)
   })
 }

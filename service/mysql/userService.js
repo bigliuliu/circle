@@ -3,15 +3,15 @@
  */
 let mysqlConn = require('./mysqlConn')
 
-var selectUser = function (userId, callback) {
+let selectUser = function (userId, callback) {
   return mysqlConn.execQuery({
-    sql: 'SELECT * FROM USER WHERE user_id = ?',
+    sql: 'SELECT user_id,nickname,avatar,user_level,user_score,register_date FROM USER WHERE user_id = ?',
     args: [userId],
     handler: callback
   })
 }
 
-var selectUserId = function (username, password, callback) {
+let selectUserId = function (username, password, callback) {
   return mysqlConn.execQuery({
     sql: 'SELECT user_id FROM USER_AUTHS WHERE identifier = ? AND password = ?',
     args: [username, password],
@@ -20,17 +20,20 @@ var selectUserId = function (username, password, callback) {
 }
 
 exports.check_login = function (username, password, callback) {
-  return selectUserId(username, password, function (result1) {
-    if (result1) {
+  selectUserId(username, password, function (result1) {
+    if (result1[0]) {
+      console.log(result1[0])
       selectUser(result1[0].user_id, function (result2) {
-        callback(result2)
+        callback(result2[0])
       })
+    } else {
+      callback(false)
     }
   })
 }
 
 exports.user_registry = function (username, password, callback) {
-  return selectUserId(username, password, function (result1) {
+  selectUserId(username, password, function (result1) {
     if (result1.length !== 0) return callback(false)
     mysqlConn.execQuery({
       sql: 'INSERT INTO USER (nickname, avatar, register_date, user_level, user_score) VALUES (?, ?, ?, ?, ?)',

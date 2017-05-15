@@ -22,9 +22,10 @@
   </el-row>
 </template>
 <script>
+  import { mapActions, mapState } from 'vuex'
   export default {
     data () {
-      var validatePass = (rule, value, callback) => {
+      let validatePass = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请输入密码'))
         } else {
@@ -34,7 +35,7 @@
           callback()
         }
       }
-      var validatePass2 = (rule, value, callback) => {
+      let validatePass2 = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请再次输入密码'))
         } else if (value !== this.ruleForm2.pass) {
@@ -63,11 +64,16 @@
         }
       }
     },
+    computed:{
+      ...mapState(['user'])
+    },
     methods: {
+      ...mapActions(['check_user']),
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!')
+            this.check_user({username: this.ruleForm.name, password: this.ruleForm.password})
+            if (this.user.user_id) this.$router.push('/user_home')
           } else {
             console.log('error submit!!')
             return false
