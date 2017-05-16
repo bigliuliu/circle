@@ -6,7 +6,7 @@
     :on-success="handleAvatarSuccess"
     :before-upload="beforeAvatarUpload">
     <img v-if="imageUrl" :src="imageUrl" class="avatar">
-    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    <!--<i v-else class="el-icon-plus avatar-uploader-icon"></i>-->
   </el-upload>
 </template>
 
@@ -36,18 +36,25 @@
 
   .avatar {
     width: 100%;
-    height: 0px;
+    height: 0;
     display: block;
     padding-bottom: 100%;
   }
 </style>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     data () {
       return {
         imageUrl: ''
       }
+    },
+    mounted () {
+      this.imageUrl = (this.user.avatar !== '' ? this.user.avatar : '/static/images/bgu.png')
+    },
+    computed: {
+      ...mapState(['user'])
     },
     methods: {
       handleAvatarSuccess (res, file) {

@@ -9,7 +9,7 @@
       </el-menu-item-group>
     </el-submenu>
     <el-menu-item index="2"><i class="el-icon-star-on"></i>关注</el-menu-item>
-    <el-menu-item index="3"><i class="el-icon-menu"></i>朋友圈</el-menu-item>
+    <el-menu-item index="3"><i class="el-icon-menu"></i>好友</el-menu-item>
   </el-menu>
 </template>
 <script>

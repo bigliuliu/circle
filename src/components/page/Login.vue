@@ -20,7 +20,7 @@
   </el-row>
 </template>
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
   export default {
     data () {
       let checkPassword = (rule, value, callback) => {
@@ -53,17 +53,17 @@
         }
       }
     },
+    computed: {
+      ...mapState(['user'])
+    },
     methods: {
       ...mapActions(['check_login']),
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.check_login({username: this.ruleForm2.pass, password: this.ruleForm2.checkPass}, function (body) {
-              if (body) this.$router.push('/user_home')
-            })
+            this.check_login({username: this.ruleForm2.pass, password: this.ruleForm2.checkPass})
           } else {
             console.log('!!')
-            return false
           }
         })
       },

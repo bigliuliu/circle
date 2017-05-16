@@ -7,7 +7,7 @@
     </el-col>
     <el-col :xs="18" :sm="17" :md="16" :lg="11">
       <div class="grid-content bg-purple">
-        <div v-if=user></div>
+        <div v-if=user.user_id></div>
         <div v-else class="login_header">
           <login-header></login-header>
         </div>
@@ -50,7 +50,7 @@
     &:last-child {
       margin-bottom: 0;
     }
-    background: #ffffff;
+    background: #7f5eff;
   }
 
   .el-col {

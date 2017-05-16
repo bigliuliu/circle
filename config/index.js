@@ -27,48 +27,7 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/shopping': {
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/ugc':{
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/v1':{
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/v2':{
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/v3': {
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/v4': {
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/bos': {
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/member': {
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/promotion': {
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      },
-      '/eus': {
-        target: 'https://mainsite-restapi.ele.me',
-        changeOrigin: true
-      }
-    },
+    proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

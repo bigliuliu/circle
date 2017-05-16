@@ -44,7 +44,7 @@
   }
 
   .bg-purple {
-    background: #4c74ff;
+    background: #1D8CE0;
   }
 
   .grid-content {
