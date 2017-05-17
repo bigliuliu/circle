@@ -32,8 +32,8 @@
   @import '../../assets/css/mixin';
 
   .el-row {
-    margin-bottom: 0px;
-    top: 45px;
+    margin-bottom: 0;
+    top: 55px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -44,7 +44,7 @@
   }
 
   .bg-purple {
-    background: #1D8CE0;
+    background: #1D55E0;
   }
 
   .grid-content {

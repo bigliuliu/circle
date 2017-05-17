@@ -61,7 +61,13 @@
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.check_login({username: this.ruleForm2.pass, password: this.ruleForm2.checkPass})
+            this.$http.post('/login', {username: this.ruleForm2.pass, password: this.ruleForm2.checkPass})
+              .then(function (response) {
+                if (response) {
+                  this.check_login(response.data)
+                  this.$router.push('/user_home')
+                }
+              })
           } else {
             console.log('!!')
           }

@@ -58,7 +58,8 @@
   }
 
   .head_logo {
-    font-size: 24px;
+    font-size: 28px;
+    margin: 10px auto;
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     height: 100%;
     line-height: 100%;
@@ -68,16 +69,21 @@
 
   .grid-content {
     border-radius: 2px;
-    height: 40px;
+    height: 50px;
     text-align: center;
   }
 
   .login_header, .logout {
     height: 36px;
     display: inline-block;
-    margin: 2px auto;
+    margin: 5px auto;
     float: right;
     font-size: 15px;
+  }
+  @media (max-width: 800px) {
+    .login_header {
+      display: none;
+    }
   }
 
 </style>

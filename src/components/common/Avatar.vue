@@ -12,33 +12,35 @@
 
 <style lang="scss">
   .avatar-uploader .el-upload {
-    border: 1px dashed #d9d9d9;
-    border-radius: 6px;
+    /*border: 1px dashed #d9d9d9;*/
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    width: 80%;
-    height: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 85%;
+    height: 85%;
+    padding: 10px 10px;
+
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
   }
 
   .avatar-uploader .el-upload:hover {
     border-color: #20a0ff;
   }
 
-  .avatar-uploader-icon {
-    color: #8c939d;
-    width: 100%;
-    height: 100%;
-  }
+  /*.avatar-uploader-icon {*/
+    /*color: #8c939d;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+  /*}*/
 
   .avatar {
+    border-radius: 50%;
     width: 100%;
-    height: 0;
-    display: block;
-    padding-bottom: 100%;
+    height: 100%;
+    /*display: block;*/
+    /*padding-bottom: 100%;*/
   }
 </style>
 
