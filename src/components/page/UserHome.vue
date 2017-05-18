@@ -3,13 +3,13 @@
     <my-header class="fix_top"></my-header>
     <el-row :gutter="10" justify="center" type="flex">
       <el-col :xs="6" :sm="5" :md="4" :lg="3">
-        <div class="grid-content bg-purple">
+        <div class="grid-content">
           <avatar></avatar>
           <left-nav class="left_nav"></left-nav>
         </div>
       </el-col>
       <el-col :xs="16" :sm="14" :md="12" :lg="10">
-        <div class="grid-content bg-purple">
+        <div class="grid-content flex_box">
           <router-view></router-view>
         </div>
       </el-col>
@@ -43,14 +43,16 @@
     border-radius: 2px;
   }
 
-  .bg-purple {
+  .grid-content {
+    border-radius: 2px;
+    min-height: 100vh;
+    height: 100%;
     background: #1D55E0;
   }
 
-  .grid-content {
-    border-radius: 2px;
-    min-height: 1000px;
-    height: 100%;
+  .flex_box {
+    display:flex;
+    justify-content: center;
   }
 
   .left_nav {
@@ -62,4 +64,5 @@
     width: 100%;
     z-index: 1999;
   }
+
 </style>

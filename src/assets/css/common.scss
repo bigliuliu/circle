@@ -17,8 +17,8 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  width: 15px;
+  height: 0;
   background-color: #F5F5F5;
 }
 
@@ -58,7 +58,7 @@ html, body {
   height: 100%;
   width: 100%;
   //background-color: #F5F5F5;
-  background-image: url("/static/images/bg.jpg");
+  background: url("/static/images/bg.jpg") no-repeat fixed;
 }
 
 .clear:after {

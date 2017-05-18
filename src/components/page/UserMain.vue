@@ -1,48 +1,22 @@
 <template>
-  <div>
-  <el-carousel :interval="4000" type="card" height="200px">
-    <el-carousel-item v-for="item in 6" :key="item">
-      <el-card :body-style="{ padding: '0px' }" class="box-card">
-        <img src="/static/images/bgu.png" class="image">
-        <div style="padding: 14px;">
-          <span>好吃的汉堡</span>
-          <div class="bottom clearfix">
-            <time class="time">{{ currentDate }}</time>
-            <el-button type="text" class="button">操作按钮</el-button>
-          </div>
-        </div>
-      </el-card>
-    </el-carousel-item>
-  </el-carousel>
-    <el-carousel :interval="4000" type="card" height="200px">
-      <el-carousel-item v-for="item in 6" :key="item">
-        <el-card :body-style="{ padding: '0px' }" class="box-card">
-          <img src="/static/images/bgu.png" class="image">
-          <div style="padding: 14px;">
-            <span>好吃的汉堡</span>
-            <div class="bottom clearfix">
-              <time class="time">{{ currentDate }}</time>
-              <el-button type="text" class="button">操作按钮</el-button>
+  <ul id="example-1">
+    <li v-for="item in 20">
+      <el-carousel :interval="4000" type="card" height="200px">
+        <el-carousel-item v-for="item in 5" :key="item">
+          <el-card :body-style="{ padding: '0px' }" class="box-card">
+            <img src="/static/images/bgu.png" class="image">
+            <div style="padding: 14px;">
+              <span>好吃的汉堡</span>
+              <div class="bottom clearfix">
+                <time class="time">{{ currentDate }}</time>
+                <el-button type="text" class="button">操作按钮</el-button>
+              </div>
             </div>
-          </div>
-        </el-card>
-      </el-carousel-item>
-    </el-carousel>
-    <el-carousel :interval="4000" type="card" height="200px">
-      <el-carousel-item v-for="item in 6" :key="item">
-        <el-card :body-style="{ padding: '0px' }" class="box-card">
-          <img src="/static/images/bgu.png" class="image">
-          <div>
-            <span>好吃的汉堡</span>
-            <div class="bottom clearfix">
-              <time class="time">{{ currentDate }}</time>
-              <el-button type="text" class="button">操作按钮</el-button>
-            </div>
-          </div>
-        </el-card>
-      </el-carousel-item>
-    </el-carousel>
-  </div>
+          </el-card>
+        </el-carousel-item>
+      </el-carousel>
+    </li>
+  </ul>
 </template>
 
 <style>
@@ -88,7 +62,7 @@
   .image {
     width: 100%;
     display: block;
-    height: 50px;
+    height: 150px;
   }
 
   .clearfix:before,

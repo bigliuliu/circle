@@ -1,7 +1,7 @@
 <template>
   <el-menu default-active="2" class="el-menu-vertical-demo" :router="true">
     <el-submenu index="1">
-      <template slot="title"><i class="el-icon-more"></i>我的圈子</template>
+      <template slot="title"><i class="el-icon-more"></i>我的</template>
       <el-menu-item-group  v-if="circles">
         <el-menu-item v-for="(circle, index) in circles" index="'1' + index" :key="circle.circle_id" :route="{path: '/home/' + circle.circle_name}">
           {{ circle.circle_name }}
