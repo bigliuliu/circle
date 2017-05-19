@@ -1,4 +1,5 @@
 <template>
+  <div>
   <ul id="example-1">
     <li v-for="item in 20">
       <el-carousel :interval="4000" type="card" height="200px">
@@ -17,6 +18,8 @@
       </el-carousel>
     </li>
   </ul>
+    <div class="scroll-top"><a class="button scrollable" @click="toTop('top')"><i class="el-icon-caret-top"></i></a></div>
+  </div>
 </template>
 
 <style>
@@ -74,12 +77,52 @@
   .clearfix:after {
     clear: both
   }
+
+  .button {
+    color: #ffffff;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 48px;
+    transition:all .3s ease-in-out;
+  }
+  .button:hover {
+    border: 2px solid #fff;
+    color: #722872;
+    background-color: #fff;
+  }
+  .scroll-top{
+    z-index:1049;
+    position:absolute;
+    visibility:visible;
+    bottom:2%;
+    /*padding-right: 2000px;*/
+    right:2%;
+  }
+  .scroll-top a{
+    background:#722872;
+  }
+  .scroll-top a:hover, .scroll-top a:focus{
+    color:#722872;
+    background-color:#bbb;
+    border-color:#722872;
+  }
 </style>
 <script>
   export default {
     data () {
       return {
         currentDate: new Date()
+      }
+    },
+    methods: {
+      toTop (id) {
+        let element = document.getElementById(id)
+        if (element) element.scrollIntoView()
       }
     }
   }
