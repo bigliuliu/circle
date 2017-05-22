@@ -2,7 +2,7 @@
   <el-row justify="center" type="flex">
     <el-col :xs="3" :sm="3" :md="3" :lg="2">
       <div class="grid-content bg-purple">
-        <div class="head_logo" @click="reload">circle</div>
+        <div class="head_logo" @click="reload">首页</div>
       </div>
     </el-col>
     <el-col :xs="18" :sm="17" :md="16" :lg="11">
@@ -37,7 +37,7 @@
     methods: {
       // 点击图标刷新页面
       reload () {
-        window.location.reload()
+        this.$router.push('/')
       }
     }
   }
@@ -46,7 +46,7 @@
   @import '../../assets/css/mixin';
 
   .el-row {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     &:last-child {
       margin-bottom: 0;
     }

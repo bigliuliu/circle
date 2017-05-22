@@ -3,7 +3,7 @@
     <el-submenu index="1">
       <template slot="title"><i class="el-icon-more"></i>我的</template>
       <el-menu-item-group  v-if="circles">
-        <el-menu-item v-for="(circle, index) in circles" index="'1' + index" :key="circle.circle_id" :route="{path: '/home/' + circle.circle_name}">
+        <el-menu-item v-for="(circle, index) in circles" index="index" :key="circle.circle_id" :route="{path: '/' +circle.circle_name}">
           {{ circle.circle_name }}
         </el-menu-item>
       </el-menu-item-group>

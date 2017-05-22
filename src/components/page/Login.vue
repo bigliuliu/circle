@@ -79,7 +79,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .floater {
     height: 100vh;
   }

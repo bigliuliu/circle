@@ -5,7 +5,7 @@
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
     :before-upload="beforeAvatarUpload">
-    <img v-if="imageUrl" :src="imageUrl" class="avatar">
+    <img v-if="imageUrl" :src="imageUrl" class="left_avatar">
     <!--<i v-else class="el-icon-plus avatar-uploader-icon"></i>-->
   </el-upload>
 </template>
@@ -35,10 +35,10 @@
     /*height: 100%;*/
   /*}*/
 
-  .avatar {
+  .left_avatar {
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     /*display: block;*/
     /*padding-bottom: 100%;*/
   }

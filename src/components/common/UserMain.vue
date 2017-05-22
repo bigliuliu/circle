@@ -1,7 +1,10 @@
 <template>
-  <div>
   <ul id="example-1">
     <li v-for="item in 20">
+      <div>
+        <img v-if="imageUrl" :src="imageUrl" class="avatar">
+        <a href="home">我的名字</a>
+      </div>
       <el-carousel :interval="4000" type="card" height="200px">
         <el-carousel-item v-for="item in 5" :key="item">
           <el-card :body-style="{ padding: '0px' }" class="box-card">
@@ -18,13 +21,22 @@
       </el-carousel>
     </li>
   </ul>
-    <div class="scroll-top"><a class="button scrollable" @click="toTop('top')"><i class="el-icon-caret-top"></i></a></div>
-  </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+  a {
+    font-size: 18px;
+    position: relative;
+    right: 72px;
+    bottom: 5px;
+  }
+  #example-1 {
+    padding-top: 40px;
+    width: 70%;
+    /*justify-content: center;*/
+  }
   .el-carousel__item {
-    color: #475669;
+    color: #6484c3;
     font-size: 14px;
     opacity: 0.75;
     line-height: 100px;
@@ -40,7 +52,7 @@
   }
 
   .el-carousel {
-    width: 450px;
+    /*width: 450px;*/
   }
 
   .box-card {
@@ -78,46 +90,28 @@
     clear: both
   }
 
-  .button {
-    color: #ffffff;
-    border: solid 2px #fff;
+  .avatar {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right: 70px;
     border-radius: 50%;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-size: 20px;
-    line-height: 48px;
-    transition:all .3s ease-in-out;
-  }
-  .button:hover {
-    border: 2px solid #fff;
-    color: #722872;
-    background-color: #fff;
-  }
-  .scroll-top{
-    z-index:1049;
-    position:absolute;
-    visibility:visible;
-    bottom:2%;
-    /*padding-right: 2000px;*/
-    right:2%;
-  }
-  .scroll-top a{
-    background:#722872;
-  }
-  .scroll-top a:hover, .scroll-top a:focus{
-    color:#722872;
-    background-color:#bbb;
-    border-color:#722872;
   }
 </style>
 <script>
+  import { mapState } from 'vuex'
   export default {
     data () {
       return {
-        currentDate: new Date()
+        currentDate: new Date(),
+        imageUrl: ''
       }
+    },
+    mounted () {
+      this.imageUrl = (this.user.avatar !== '' ? this.user.avatar : '/static/images/bgu.png')
+    },
+    computed: {
+      ...mapState(['user'])
     },
     methods: {
       toTop (id) {

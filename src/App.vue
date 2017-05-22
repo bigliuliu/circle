@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header class="fix_top"></my-header>
     <transition name="router-fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -7,7 +8,12 @@
 </template>
 
 <script>
-  export default {}
+  import MyHeader from './components/common/MyHeader.vue'
+  export default {
+    components: {
+      MyHeader
+    }
+  }
 </script>
 
 <style lang="scss">
