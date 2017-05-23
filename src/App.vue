@@ -19,6 +19,13 @@
 <style lang="scss">
   @import "assets/css/common";
 
+  .fix_top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1999;
+  }
+
   .router-fade-enter-active, .router-fade-leave-active {
     transition: opacity .3s;
   }

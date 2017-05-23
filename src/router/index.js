@@ -5,16 +5,41 @@ import App from '../App'
 Vue.use(Router)
 
 const Home = r => require.ensure([], () => r(require('../components/page/UserHome.vue')), 'user_home')
-// const Main = r => require.ensure([], () => r(require('../components/page/UserMain.vue')), 'user_main')
+const UserMain = r => require.ensure([], () => r(require('../components/page/UserMain.vue')), 'user_main')
 const Login = r => require.ensure([], () => r(require('../components/page/Login.vue')), 'login')
 const Registry = r => require.ensure([], () => r(require('../components/page/Registry.vue')), 'registry')
+const Friend = r => require.ensure([], () => r(require('../components/page/Friend.vue')), 'friend')
+
+const scrollBehavior = (to, from, savedPosition) => {
+  if (savedPosition) {
+    // savedPosition is only available for popstate navigations.
+    return savedPosition
+  } else {
+    const position = {}
+    // new navigation.
+    // scroll to anchor by returning the selector
+    if (to.hash) {
+      position.selector = to.hash
+    }
+    return position
+  }
+}
+
 export default new Router({
   routes: [{
     path: '/',
     component: App,
     children: [{
       path: '',
-      component: Home
+      redirect: '/main',
+      component: Home,
+      children: [{
+        path: 'main',
+        component: UserMain
+      }, {
+        path: 'friend',
+        component: Friend
+      }]
     }, {
       path: 'login',
       component: Login
@@ -22,6 +47,7 @@ export default new Router({
       path: 'registry',
       component: Registry
     }],
-    mode: 'hash'
+    scrollBehavior,
+    mode: 'history'
   }]
 })

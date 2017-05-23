@@ -21,7 +21,7 @@
     },
     mounted () {
       this.circles = [{
-        circle_id: 3, circle_name: 'login'
+        circle_id: 3, circle_name: 'friend'
       }, {
         circle_id: 2, circle_name: 'registry'
       }]
