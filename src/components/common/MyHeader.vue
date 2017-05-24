@@ -2,7 +2,8 @@
   <el-row justify="center" type="flex">
     <el-col :xs="3" :sm="3" :md="3" :lg="2">
       <div class="grid-content bg-purple">
-        <div class="head_logo" @click="reload">首页</div>
+        <router-link to="/" class="head_logo">首页</router-link>
+        <!--<div class="head_logo" @click="reload">首页</div>-->
       </div>
     </el-col>
     <el-col :xs="18" :sm="17" :md="16" :lg="11">
@@ -33,12 +34,6 @@
     },
     components: {
       LoginHeader, LogOut
-    },
-    methods: {
-      // 点击图标刷新页面
-      reload () {
-        this.$router.push('/')
-      }
     }
   }
 </script>
@@ -59,12 +54,16 @@
 
   .head_logo {
     font-size: 28px;
-    margin: 10px auto;
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    height: 100%;
-    line-height: 100%;
+    height: 48px;
+    width: 60%;
     display: inline-block;
-    /*margin: 0px auto;*/
+    background-color: #7f8eff;
+    text-align: center;
+  }
+
+  .head_logo:hover,.head_logo:focus{
+    color: white;
   }
 
   .grid-content {

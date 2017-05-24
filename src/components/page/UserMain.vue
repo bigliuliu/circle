@@ -35,7 +35,7 @@
   }
 
   .right-content {
-    background: #1D55E0;
+    background: linear-gradient(120deg, rgba(204, 232, 207, 1), rgba(204,232,207,0.6));
     min-height: 75vh;
     height: 75vh;
     overflow: scroll;
@@ -43,7 +43,7 @@
 
   .middle_header {
     height: 19vh;
-    background: #1D55E0;
+    background: linear-gradient(120deg, rgba(204,232,207,0.9), rgba(30,144,255,0.1));
     margin-bottom: 0.4vh;
   }
 

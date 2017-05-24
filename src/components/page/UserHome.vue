@@ -44,7 +44,8 @@
 
   .left_nav {
     margin: 10px 5px 3px 3px;
-    background-color: rgba(55, 95, 255, 0.95);
+    background: linear-gradient(120deg, rgba(204,232,207,0.9), rgba(204,232,207,0.1));
+    /*background-color: #cce8cf;*/
     color: #131313;
     border-radius: 10px;
   }

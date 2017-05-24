@@ -18,7 +18,6 @@
 
 <style lang="scss">
   @import "assets/css/common";
-
   .fix_top {
     position: fixed;
     top: 0;
