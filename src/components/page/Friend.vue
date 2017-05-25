@@ -7,7 +7,7 @@
 </script>
 <style lang="scss" scoped>
   .right-content {
-    background: #1D55E0;
+    background: linear-gradient(160deg, rgba(204,232,207,0.9), rgba(30,144,255,0.1));
     min-height: 95vh;
     /*height: 95vh;*/
     overflow: scroll;

@@ -43,7 +43,7 @@
 
   .middle_header {
     height: 19vh;
-    background: linear-gradient(120deg, rgba(204,232,207,0.9), rgba(30,144,255,0.1));
+    background: linear-gradient(160deg, rgba(204,232,207,0.9), rgba(30,144,255,0.1));
     margin-bottom: 0.4vh;
   }
 
