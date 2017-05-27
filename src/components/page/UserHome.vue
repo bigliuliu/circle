@@ -7,7 +7,7 @@
           <left-nav class="left_nav"></left-nav>
         </div>
       </el-col>
-      <el-col :xs="16" :sm="14" :md="12" :lg="10">
+      <el-col :xs="18" :sm="16" :md="14" :lg="10">
           <router-view></router-view>
       </el-col>
     </el-row>
@@ -26,7 +26,6 @@
 
 <style lang="scss" scoped>
   @import '../../assets/css/mixin';
-
   .el-row {
     margin-bottom: 0;
     &:last-child {
@@ -44,7 +43,7 @@
 
   .left_nav {
     margin: 10px 5px 3px 3px;
-    background: linear-gradient(120deg, rgba(204,232,207,0.9), rgba(204,232,207,0.1));
+    background: linear-gradient(120deg, rgba(47, 57, 56, 0.87), rgba(204,232,207,0.1));
     /*background-color: #cce8cf;*/
     color: #131313;
     border-radius: 10px;

@@ -7,9 +7,12 @@ import './config/rem'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
-import axios from 'axios'
-Vue.prototype.$http = axios
+import Icon from 'vue-awesome/components/Icon'
 
+import axios from 'axios'
+
+Vue.prototype.$http = axios
+Vue.component('icon', Icon)
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

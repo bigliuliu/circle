@@ -4,16 +4,19 @@
     </el-button>
     <el-dropdown-menu slot="dropdown"  class="small">
       <div v-if=user.user_id>
-        <el-dropdown-item command="/logout">登出</el-dropdown-item>
+        <el-dropdown-item command="/logout">登出<icon name="sign-out"></icon></el-dropdown-item>
       </div>
       <div v-else>
-        <el-dropdown-item command="/login">登录</el-dropdown-item>
-        <el-dropdown-item command="/registry">注册</el-dropdown-item>
+        <el-dropdown-item command="/login">登录<icon name="sign-in"></icon></el-dropdown-item>
+        <el-dropdown-item command="/registry">注册<icon name="registered"></icon></el-dropdown-item>
       </div>
     </el-dropdown-menu>
   </el-dropdown>
 </template>
 <script>
+  import 'vue-awesome/icons/sign-in'
+  import 'vue-awesome/icons/sign-out'
+  import 'vue-awesome/icons/registered'
   import { mapState } from 'vuex'
   export default {
     computed: {
@@ -28,9 +31,11 @@
 </script>
 <style lang="scss" scoped>
   .small {
+    border: none;
     font-size: 18px;
     text-align: center;
     vertical-align: middle;
     border-radius: 6px;
+    background-color: #1c8de0;
   }
 </style>

@@ -1,18 +1,21 @@
 <template>
-  <el-menu default-active="2" class="el-menu-vertical-demo" :router="true">
+  <el-menu default-active="2" class="el-menu-vertical-demo" :router="true" theme="dark">
     <el-submenu index="1">
-      <template slot="title"><i class="el-icon-more"></i>我的</template>
+      <template slot="title"><icon name="navicon"></icon>我的</template>
       <el-menu-item-group  v-if="circles">
         <el-menu-item v-for="(circle, index) in circles" index="index" :key="circle.circle_id" :route="{path: '/' +circle.circle_name}">
           {{ circle.circle_name }}
         </el-menu-item>
       </el-menu-item-group>
     </el-submenu>
-    <el-menu-item index="2"><i class="el-icon-star-on"></i>关注</el-menu-item>
-    <el-menu-item index="3"><i class="el-icon-menu"></i>好友</el-menu-item>
+    <el-menu-item index="2"><icon name="star"></icon>关注</el-menu-item>
+    <el-menu-item index="3"><icon name="user"></icon>好友</el-menu-item>
   </el-menu>
 </template>
 <script>
+  import 'vue-awesome/icons/user'
+  import 'vue-awesome/icons/star'
+  import 'vue-awesome/icons/navicon'
   export default {
     data () {
       return {
@@ -28,3 +31,10 @@
     }
   }
 </script>
+<style lang="scss" scoped>
+  .fa-icon {
+    width: 25px;
+    position: relative;
+    top: 3px;
+  }
+</style>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="flex_box middle_header"></div>
+    <div class="scroll-left scroll"><a class="hidden_left" @click="hiddenLeft"><icon :name=step></icon></a></div>
     <div class="right-content flex_box" id="toTop">
       <ul id="example-1">
         <li v-for="item in 20">
@@ -25,7 +26,7 @@
         </li>
       </ul>
     </div>
-    <div class="scroll-top"><a class="button scrollable" @click="toTop"><i class="el-icon-caret-top"></i></a></div>
+    <div class="scroll-top scroll"><a class="button" @click="toTop"><i class="el-icon-caret-top"></i></a></div>
   </div>
 </template>
 
@@ -67,10 +68,33 @@
     float: right;
   }
 
+  .hidden_left {
+    color: #ffffff;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    transition: all .3s ease-in-out;
+    padding: 0;
+    float: left;
+  }
+
   .button:hover {
     border: 2px solid #fff;
     color: #722872;
     background-color: #fff;
+  }
+
+  .scroll-left {
+    z-index: 1048;
+    position: relative;
+    visibility: visible;
+    top: 68vh;
+    margin-left: -30px;
   }
 
   .scroll-top {
@@ -81,11 +105,11 @@
     left: 50px;
   }
 
-  .scroll-top a {
+  .scroll a {
     background: #722872;
   }
 
-  .scroll-top a:hover, .scroll-top a:focus {
+  .scroll a:hover, .scroll a:focus {
     color: #722872;
     background-color: #bbb;
     border-color: #722872;
@@ -166,14 +190,19 @@
     right: 70px;
     border-radius: 50%;
   }
+
 </style>
 <script>
+  import 'vue-awesome/icons/step-forward'
+  import 'vue-awesome/icons/step-backward'
   import { mapState } from 'vuex'
   export default {
     data () {
       return {
         currentDate: new Date(),
-        imageUrl: ''
+        imageUrl: '',
+        step: 'step-backward',
+        isActive: false
       }
     },
     mounted () {
@@ -186,6 +215,17 @@
       toTop () {
         let element = document.getElementById('toTop')
         if (element) element.scrollTop = 0
+      },
+      hiddenLeft () {
+        this.isActive = !this.isActive
+        let leftnav = document.getElementById('leftnav')
+        if (this.isActive) {
+          leftnav.style.display = 'block'
+          this.step = 'step-backward'
+        } else {
+          leftnav.style.display = 'none'
+          this.step = 'step-forward'
+        }
       }
     }
   }
