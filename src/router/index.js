@@ -9,6 +9,7 @@ const UserMain = r => require.ensure([], () => r(require('../components/page/Use
 const Login = r => require.ensure([], () => r(require('../components/page/Login.vue')), 'login')
 const Registry = r => require.ensure([], () => r(require('../components/page/Registry.vue')), 'registry')
 const Friend = r => require.ensure([], () => r(require('../components/page/Friend.vue')), 'friend')
+const Guides = r => require.ensure([], () => r(require('../components/page/Guides.vue')), 'guides')
 
 const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
@@ -39,6 +40,9 @@ export default new Router({
       }, {
         path: 'friend',
         component: Friend
+      }, {
+        path: 'guides',
+        component: Guides
       }]
     }, {
       path: 'login',

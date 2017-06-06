@@ -27,6 +27,8 @@
         circle_id: 3, circle_name: 'friend'
       }, {
         circle_id: 2, circle_name: 'registry'
+      }, {
+        circle_id: 1, circle_name: 'guides'
       }]
     }
   }
