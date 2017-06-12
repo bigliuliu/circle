@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="flex_box middle_header"></div>
+    <div class="flex_box middle_header">
+      <publish></publish>
+    </div>
     <div class="scroll-left scroll"><a class="hidden_left" @click="hiddenLeft"><icon :name=step></icon></a></div>
     <div class="right-content flex_box" id="toTop">
       <ul id="example-1">
@@ -195,6 +197,7 @@
 <script>
   import 'vue-awesome/icons/step-forward'
   import 'vue-awesome/icons/step-backward'
+  import Publish from '../common/Publish.vue'
   import { mapState } from 'vuex'
   export default {
     data () {
@@ -204,6 +207,9 @@
         step: 'step-backward',
         isActive: false
       }
+    },
+    components: {
+      Publish
     },
     mounted () {
       this.imageUrl = (this.user.avatar !== '' ? this.user.avatar : '/static/images/bgu.png')
@@ -220,11 +226,11 @@
         this.isActive = !this.isActive
         let leftnav = document.getElementById('leftnav')
         if (this.isActive) {
-          leftnav.style.display = 'block'
-          this.step = 'step-backward'
-        } else {
           leftnav.style.display = 'none'
           this.step = 'step-forward'
+        } else {
+          leftnav.style.display = 'block'
+          this.step = 'step-backward'
         }
       }
     }
