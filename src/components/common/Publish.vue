@@ -1,6 +1,6 @@
 <template>
   <el-form :model="ruleForm" ref="ruleForm" labelWidth="100%">
-    
+
     <el-input
       type="textarea"
       placeholder="写点什么"
