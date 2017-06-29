@@ -95,7 +95,7 @@
     z-index: 1048;
     position: relative;
     visibility: visible;
-    top: 68vh;
+    top: 60vh;
     margin-left: -30px;
   }
 

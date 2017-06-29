@@ -2,7 +2,9 @@
   <div>
     <my-header class="fix_top"></my-header>
     <transition name="router-fade" mode="out-in">
+      <keep-alive>
       <router-view></router-view>
+      </keep-alive>
     </transition>
   </div>
 </template>
