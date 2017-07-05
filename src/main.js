@@ -9,9 +9,6 @@ import 'element-ui/lib/theme-default/index.css'
 
 import Icon from 'vue-awesome/components/Icon'
 
-import axios from 'axios'
-
-Vue.prototype.$http = axios
 Vue.component('icon', Icon)
 Vue.use(ElementUI)
 
