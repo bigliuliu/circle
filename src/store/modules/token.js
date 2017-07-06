@@ -12,13 +12,11 @@ const state = {
 
 const mutations = {
   [LOGIN] (state, token) {
-    'use strict'
     state.token = token
     state.login = true
     saveToken(token)
   },
   [LOGOUT] (state) {
-    'use strict'
     state.token = {}
     state.login = false
     clearToken()
@@ -27,14 +25,13 @@ const mutations = {
 
 const actions = {
   login: ({commit}, user) => {
-    'use strict'
     oauthPost(
       user,
       response => {
         commit(LOGIN, response.data)
       },
       err => {
-        console.log(err);
+        console.log(err)
       })
   },
   getToken: ({commit}) => {

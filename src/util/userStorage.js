@@ -1,7 +1,7 @@
 /**
  * Created by spark on 7/5/17.
  */
-import logger from 'loggerUtils'
+import {logger} from './loggerUtils'
 
 export const saveUserInfo = (userInfo) => {
   const localStorage = window.localStorage

@@ -2,12 +2,11 @@
  * Created by spark on 7/5/17.
  */
 import axios from 'axios'
-import { HOST_CONCIG, KEY_CONFIG, API_ROUTER } from 'config'
+import { HOST_CONCIG, KEY_CONFIG, API_ROUTER } from './config'
 import { logger } from '../util/loggerUtils'
 import store from '../store/'
 
 export const oauthPost = (user, okCallback, errorCallback) => {
-  'use strict'
   let oauthData = {
     client_id: KEY_CONFIG.client_id,
     password: user.password,
@@ -35,7 +34,6 @@ export const oauthPost = (user, okCallback, errorCallback) => {
 }
 
 export const getUserByName = (username, okCallback, errorCallback) => {
-  'use strict'
   const accesstoken = store.getters.token.access_token
   let config = {
     method: 'get',
@@ -59,7 +57,6 @@ export const getUserByName = (username, okCallback, errorCallback) => {
 }
 
 export const refreshToken = (token, okCallback, errorCallback) => {
-  'use strict'
   let requestData = {
     refresh_token: token.refresh_token,
     grant_type: 'refresh_token'

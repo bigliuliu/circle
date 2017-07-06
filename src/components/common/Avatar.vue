@@ -53,7 +53,7 @@
       }
     },
     mounted () {
-      this.imageUrl = (this.user.avatar !== '' ? this.user.avatar : '/static/images/bgu.png')
+      this.imageUrl = (this.userInfo.avatar !== '' ? this.user.avatar : '/static/images/bgu.png')
     },
     computed: {
       ...mapState(['user'])
