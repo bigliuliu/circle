@@ -2,6 +2,7 @@
  * Created by spark on 7/5/17.
  */
 import axios from 'axios'
+import Qs from 'qs'
 import { HOST_CONCIG, KEY_CONFIG, API_ROUTER } from './config'
 import { logger } from '../util/loggerUtils'
 import store from '../store/'
@@ -16,9 +17,9 @@ export const oauthPost = (user, okCallback, errorCallback) => {
   let config = {
     method: 'post',
     url: HOST_CONCIG.oauth,
-    data: oauthData,
+    data: Qs.stringify(oauthData),
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
       'Authorization': KEY_CONFIG.app_secret
     }
   }
@@ -62,11 +63,11 @@ export const refreshToken = (token, okCallback, errorCallback) => {
     grant_type: 'refresh_token'
   }
   let config = {
-    method: 'get',
+    method: 'post',
     url: HOST_CONCIG.oauth,
     data: requestData,
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
       'Authorization': KEY_CONFIG.app_secret
     }
   }
