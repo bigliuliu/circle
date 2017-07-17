@@ -14,7 +14,7 @@
           <el-carousel :interval="4000" type="card" height="200px">
             <el-carousel-item v-for="item in 5" :key="item">
               <el-card :body-style="{ padding: '0px' }" class="box-card">
-                <img src="/static/images/bgu.png" class="image">
+                <img src="/src/assets/images/bgu.png" class="image">
                 <div style="padding: 14px;">
                   <span>好吃的汉堡</span>
                   <div class="bottom clearfix">

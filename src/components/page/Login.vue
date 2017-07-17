@@ -1,7 +1,7 @@
 <template>
   <el-row :gutter="10" justify="center" type="flex" class="floater">
     <el-col :xs="6" :sm="5" :md="4" :lg="3">
-      <img src="/static/images/bgu.png" alt="" class="content">
+      <img src="/src/assets/images/bgu.png" alt="" class="content">
     </el-col>
     <el-col :xs="12" :sm="10" :md="8" :lg="6">
       <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm content">

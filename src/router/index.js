@@ -10,6 +10,7 @@ const Login = r => require.ensure([], () => r(require('../components/page/Login.
 const Registry = r => require.ensure([], () => r(require('../components/page/Registry.vue')), 'registry')
 const Friend = r => require.ensure([], () => r(require('../components/page/Friend.vue')), 'friend')
 const Guides = r => require.ensure([], () => r(require('../components/page/Guides.vue')), 'guides')
+const Publish = r => require.ensure([], () => r(require('../components/page/Publish.vue')), 'publish')
 
 const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
@@ -50,6 +51,9 @@ export default new Router({
     }, {
       path: 'registry',
       component: Registry
+    }, {
+      path: 'publish',
+      component: Publish
     }],
     scrollBehavior,
     mode: 'history'
