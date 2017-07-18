@@ -8,7 +8,7 @@
     </el-col>
     <el-col :xs="18" :sm="17" :md="16" :lg="11">
       <div class="grid-content bg-purple">
-        <div v-if=user.user_id></div>
+        <div v-if=userInfo.user_id></div>
         <div v-else class="login_header">
           <login-header></login-header>
         </div>
@@ -30,7 +30,9 @@
       return {}
     },
     computed: {
-      ...mapState(['user'])
+      ...mapState({
+        userInfo: state => state.userInfo.userInfo
+      })
     },
     components: {
       LoginHeader, LogOut

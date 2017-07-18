@@ -53,10 +53,12 @@
       }
     },
     mounted () {
-      this.imageUrl = (this.userInfo.avatar !== '' ? this.user.avatar : '/static/images/bgu.png')
+      this.imageUrl = (this.userInfo.avatar ? this.userInfo.avatar : require('../../assets/images/bgu.png'))
     },
     computed: {
-      ...mapState(['user'])
+      ...mapState({
+        userInfo: state => state.userInfo.userInfo
+      })
     },
     methods: {
       handleAvatarSuccess (res, file) {

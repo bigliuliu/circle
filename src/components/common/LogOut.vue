@@ -3,7 +3,7 @@
     <el-button type="primary">更多菜单<i class="el-icon-caret-bottom el-icon--right"></i>
     </el-button>
     <el-dropdown-menu slot="dropdown"  class="small">
-      <div v-if=user.user_id>
+      <div v-if=userInfo.user_id>
         <el-dropdown-item command="/logout">登出<icon name="sign-out"></icon></el-dropdown-item>
       </div>
       <div v-else>
@@ -20,7 +20,9 @@
   import { mapState } from 'vuex'
   export default {
     computed: {
-      ...mapState(['user'])
+      ...mapState({
+        userInfo: state => state.userInfo.userInfo
+      })
     },
     methods: {
       handleCommand (command) {

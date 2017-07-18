@@ -92,6 +92,7 @@
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
+    "vue-devtools": "^3.1.2",
     "vue-loader": "^11.1.4",
     "vue-style-loader": "^2.0.0",
     "vue-template-compiler": "^2.2.4",

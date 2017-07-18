@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex_box middle_header">
-      <publish></publish>
+      <editor></editor>
     </div>
     <div class="scroll-left scroll"><a class="hidden_left" @click="hiddenLeft"><icon :name=step></icon></a></div>
     <div class="right-content flex_box" id="toTop">
@@ -14,7 +14,7 @@
           <el-carousel :interval="4000" type="card" height="200px">
             <el-carousel-item v-for="item in 5" :key="item">
               <el-card :body-style="{ padding: '0px' }" class="box-card">
-                <img src="/src/assets/images/bgu.png" class="image">
+                <img src="../../assets/images/bgu.png" class="image">
                 <div style="padding: 14px;">
                   <span>好吃的汉堡</span>
                   <div class="bottom clearfix">
@@ -197,7 +197,7 @@
 <script>
   import 'vue-awesome/icons/step-forward'
   import 'vue-awesome/icons/step-backward'
-  import Publish from '../common/Publish.vue'
+  import Editor from '../common/Editor.vue'
   import { mapState } from 'vuex'
   export default {
     data () {
@@ -209,13 +209,15 @@
       }
     },
     components: {
-      Publish
+      Editor
     },
     mounted () {
-      this.imageUrl = (this.user.avatar !== '' ? this.user.avatar : '/static/images/bgu.png')
+      this.imageUrl = (this.userInfo.avatar ? this.userInfo.avatar : require('../../assets/images/bgu.png'))
     },
     computed: {
-      ...mapState(['user'])
+      ...mapState({
+        userInfo: state => state.userInfo.userInfo
+      })
     },
     methods: {
       toTop () {

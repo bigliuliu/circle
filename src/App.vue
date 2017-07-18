@@ -18,6 +18,14 @@
 
 <style lang="scss">
   @import "assets/css/common";
+  html, body {
+    height: 100%;
+    width: 100%;
+    //background-color: #F5F5F5;
+    background: url("./assets/images/bg.jpg") no-repeat fixed;
+    overflow-y: hidden;
+  }
+
   .fix_top {
     position: fixed;
     top: 0;
