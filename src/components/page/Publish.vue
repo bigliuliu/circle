@@ -282,6 +282,7 @@
   import crop from '../common/Crop';
   import Config from '../../../config';
   import {logger} from '../../util/loggerUtils';
+  import * as API from "../../api/api"
 
   export default {
     name: 'home-publish',
@@ -437,8 +438,8 @@
       this.$nextTick(function f1() {
         // 保证 this.$el 已经插入文档
         this.$refs.editor.id = this.id;
-        const str = Tool.getUserPhone();
-        this.storageKey = 'publishModal_' + str.substr(str.length - 5);
+//        const str = Tool.getUserPhone();
+        this.storageKey = 'publishModal_' + 152662;
         console.log('storageKey :', this.storageKey);
         this.editor = UE.getEditor(this.id, this.config);
         this.editor.ready(function f2() {
@@ -550,7 +551,7 @@
         let self = this;
         // this.storageKey = this.storageKey;
         console.log('publish page init');
-        this.publish_category = API.getRemoteArticleCategory();
+        this.publish_category = getRemoteArticleCategory();
         const tabname = this.$route.params.tabname;
         console.log('tabname:' + tabname);
         if (tabname === '2' || tabname === '3' || tabname === '4') {

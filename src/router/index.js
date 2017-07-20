@@ -33,11 +33,11 @@ export default new Router({
     component: App,
     children: [{
       path: '',
-      redirect: '/main',
+      redirect: '/publish',
       component: Home,
       children: [{
         path: 'main',
-        component: UserMain
+        component: Publish
       }, {
         path: 'friend',
         component: Friend

@@ -15,7 +15,7 @@ minSize: 选区最小范围
   <div>
     <el-dialog title="裁剪图片" :close-on-press-escape=false :close-on-click-modal=false  v-model="dialogCropVisible">
       <div class="crop-pic-content">
-        <img :src="imgUrl" :id="bId" alt="Jcrop Image" />
+        <img :src="imgUrl" :id="bId" alt="Jcrop Image"/>
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogCropVisible = false">取 消</el-button>
